@@ -27,6 +27,9 @@ class TodosController < ApplicationController
       render 'edit'
     end
   end
+  def index
+    @alltodo = Todo.all
+  end
   private
   def todo_params
     params.require(:todo).permit(:name, :description)
